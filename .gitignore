@@ -50,4 +50,5 @@ next-env.d.ts
 /app/seedUsers
 /app/seedall
 /app/query
-/app/lib
+#/app/lib
+/app/lib/placeholder-data.ts

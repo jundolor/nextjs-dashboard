@@ -1,5 +1,5 @@
-//import { neon } from "@neondatabase/serverless";
-/*
+import { neon } from "@neondatabase/serverless";
+
 import {
   CustomerField,
   CustomersTableType,
@@ -7,12 +7,12 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
-} from './definitions';*/
-//import { formatCurrency } from './utils';
+} from './definitions';
+import { formatCurrency } from './utils';
 
 
 
-//const sql = neon(process.env.DATABASE_URL!)
+const sql = neon(process.env.DATABASE_URL!)
 
 export async function fetchRevenue() {
     try{
@@ -22,12 +22,11 @@ export async function fetchRevenue() {
         // console.log('Fetching revenue data...');
         // await new Promise((resolve) => setTimeout(resolve, 3000));
 
-        //const data = await sql`SELECT * FROM revenue`;
+        const data = await sql`SELECT * FROM revenue`;
 
         // console.log('Data fetch completed after 3 seconds.');
 
-        //return data as Revenue[];
-        return 'test'
+        return data as Revenue[];
     }
     catch(error){
         console.error('Database error:',error)
@@ -37,7 +36,7 @@ export async function fetchRevenue() {
 
 export async function fetchLatestInvoices(){
     try{
-        /*
+        
         const data = await sql `
         SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
         FROM invoices
@@ -49,8 +48,7 @@ export async function fetchLatestInvoices(){
         ...invoice,
         amount: formatCurrency(invoice.amount),
         }));
-        return latestInvoices;*/
-        return 'test2'
+        return latestInvoices;
     }
     catch(error) {
         console.error('Database error:',error)

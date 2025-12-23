@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*.local
+
+#db test
+/app/testdb/
+
+#initial seed
+/app/seedUsers
+/app/seedall
+/app/query
+/app/lib

@@ -190,3 +190,29 @@ export async function fetchCustomers(): Promise<CustomerField[]>{
     throw new Error('Failed to fetch all customers.');
   }
 }
+
+export async function fetchInvoiceById(id:string){
+  try {
+    const data = await sql `
+      SELECT
+        invoices.id,
+        invoices.customer_id,
+        invoices.amount,
+        invoices.status
+      FROM invoices
+      WHERE invoices.id = ${id}
+    ` as InvoiceForm[]
+
+    const invoice = data.map((invoice) => ({
+      ...invoice,
+      // Convert amount from cents to dollars
+      amount: invoice.amount / 100,
+    }));
+
+    return invoice[0] 
+  }
+  catch (error) {
+    console.error('Database Error:', error)
+    throw new Error("Failed to fetch invoice")
+  }
+}

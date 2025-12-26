@@ -173,3 +173,20 @@ export async function fetchInvoicesPages(query: string){
   }
 
 }
+
+export async function fetchCustomers(): Promise<CustomerField[]>{
+  try {
+    const customers = await sql `
+      SELECT
+        id,
+        name
+      FROM customers
+      ORDER BY name ASC
+    ` 
+    return customers as CustomerField[]
+
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch all customers.');
+  }
+}

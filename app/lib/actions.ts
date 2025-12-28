@@ -30,9 +30,11 @@ export async function createInvoice(formData:FormData) {
         `
     } catch(error) {
         console.error(error)
+        /*
         return {
             message: "Database Error: Failed to Create Invoice"
-        }
+        }*/
+       throw new Error('Database Error: Failed to Create Invoice.');
     }
     
     revalidatePath('/dashboard/invoices')

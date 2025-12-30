@@ -23,6 +23,7 @@ export default function Home() {
             </a>
             , brought to you by Vercel.
           </p>
+          <p>By <a href="https://www.linkedin.com/in/jun-dolor/" target="_blank" rel="noreferrer"className="text-blue-500 underline"> Jun Dolor</a> </p>
           <Link
             href="/login"
             className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"

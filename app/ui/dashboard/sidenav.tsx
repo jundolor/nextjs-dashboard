@@ -18,6 +18,7 @@ export default function SideNav() {
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
         <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
+        <div>By <a href="https://www.linkedin.com/in/jun-dolor/" target="_blank" rel="noreferrer"className="text-blue-500 underline"> Jun Dolor</a></div>
         <form
           action={async () => {
             'use server'
